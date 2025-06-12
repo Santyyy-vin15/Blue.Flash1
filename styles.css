@@ -1,0 +1,336 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #000000;
+  color: #0c19ce;
+}
+
+header {
+  background-color: #06060794;
+  color: rgb(42, 55, 236);
+  padding: 20px 0;
+}
+
+header h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+header nav a {
+  color: rgb(252, 248, 248);
+  text-decoration: none;
+  font-weight: bold;
+}
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 3;
+}
+
+.logo img {
+    width: 110px;  /* tamaño pequeño */
+    height: auto;
+    border-radius: 8px;
+    background: rgba(32, 32, 36, 0.342);
+    padding: 5px 2px; 
+    border-radius: 45px;
+}
+
+.contacto {
+    position: absolute;
+    right: 20px;
+    bottom: 530px;
+    color: rgb(247, 244, 244);
+    font-size: 18px;
+    background: rgba(32, 32, 36, 0.342);
+    padding: 5px 20px; 
+    border-radius: 10px;
+} /*hago que dentro del header ubique el contacto abajo a la derecha*/
+
+.ubicacion1 {
+    position: absolute;
+    right: 20px;
+    bottom: 566px;/*bajar el coso*/
+    color: rgb(235, 235, 236);/*Color de la letra*/
+    font-size: 18px;
+    background: rgba(36, 36, 32, 0.342); /*Color del fondo*/
+    padding: 5px 10px;
+    border-radius: 10px; /*redondeo del fondo */
+} /*hago que dentro del header ubique la ubicacion abajo a la derecha*/
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+ 
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 70px;
+}
+
+.product-card {
+  background-color: rgba(0, 0, 0, 0.932);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  padding: 12px;
+}
+
+.product-card select {
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 50px;
+  width: 100%;
+}
+
+.btn-comprar {
+  margin-top: 15px;
+  padding: 10px;
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-comprar:hover {
+  background-color: #101111d5;
+}
+
+.btn-comprar:active {
+  background-color: #100dd8;
+}
+
+/*primera parte*/
+.bloque-contenido {
+  display: flex;
+  align-items: start;
+  gap: 500px;
+  margin: 3px 0;
+  padding:10px;
+} 
+
+.imagenes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.imagenes img {
+  width: 250px;
+  border-radius: 20px;
+}
+
+.texto {
+  flex: 1;
+  color: rgb(9, 31, 228);
+  text-align: left;
+  text-align:justify;
+}
+
+@media (max-width: 768px) {
+  .bloque-contenido {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .imagenes {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/*segunda parte*/
+.bloque-contenido1 {
+  display: flex;
+  align-items:end;
+  gap: 90px;
+  margin: 410px 0;
+}
+
+.imagenes1 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.imagenes1 img {
+  width: 250px;
+  border-radius: 20px;
+}
+
+.texto1 {
+  flex: 1;
+  color: rgb(218, 220, 235);
+  text-align: left;
+  text-align:justify;
+}
+
+.redes-sociales {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.redes-sociales a img {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.2s ease, filter 0.3s;
+}
+
+.redes-sociales a:hover img {
+  transform: scale(1.2);
+}
+
+/* Colores por red social al pasar el mouse */
+.redes-sociales a.facebook:hover img {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(94%) saturate(596%) hue-rotate(179deg) brightness(89%) contrast(89%);
+}
+
+.redes-sociales a.instagram:hover img {
+  filter: brightness(0) saturate(100%) invert(43%) sepia(93%) saturate(5000%) hue-rotate(310deg) brightness(101%) contrast(108%);
+}
+
+.redes-sociales a.whatsapp:hover img {
+  filter: brightness(0) saturate(100%) invert(52%) sepia(96%) saturate(441%) hue-rotate(88deg) brightness(92%) contrast(96%);
+}
+
+.redes-sociales a.tiktok:hover img {
+  filter: brightness(0) saturate(100%) invert(19%) sepia(93%) saturate(2770%) hue-rotate(316deg) brightness(88%) contrast(99%);
+}
+
+.redes-sociales a.ubicacion:hover img {
+  filter: brightness(0) saturate(100%) invert(43%) sepia(93%) saturate(5000%) hue-rotate(310deg) brightness(101%) contrast(108%);
+}
+
+@media (max-width: 768px) {
+  .bloque-contenido {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .imagenes1 {
+    flex-direction:row;
+    justify-content: center;
+  }
+}
+
+#carrito-icono {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 999;
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+#carrito-panel {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #ffffff;
+  color: #000;
+  padding: 20px;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+  transition: right 0.3s ease;
+  z-index: 998;
+}
+
+#carrito-panel.abierto {
+  right: 0;
+}
+
+#carrito-lista {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+#carrito-lista li {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+#cerrar-carrito {
+  margin-top: 20px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#carrito-lista li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.eliminar-item {
+  background: red;
+  color: white;
+  border: none;
+  padding: 2px 6px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+#carrito-total {
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: right;
+}
+
+
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 50px;
+}
