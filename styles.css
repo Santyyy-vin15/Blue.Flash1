@@ -7,7 +7,7 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #000000;
-  color: #0c19ce;
+  color: #0f20e1;
 }
 
 header {
@@ -324,6 +324,64 @@ h2 {
   font-weight: bold;
   margin-top: 20px;
   text-align: right;
+}
+
+@media (max-width: 430px) {
+  header {
+    padding: 10px;
+    text-align: center;
+    position: relative;
+  }
+
+  .logo {
+    position: static;
+    margin: 0 auto 10px;
+    text-align: center;
+  }
+
+  .contacto, .ubicacion1 {
+    position: static;
+    display: block;
+    margin: 5px auto;
+    text-align: center;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .container {
+    width: 95%;
+    margin: 20px auto;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr; /* 1 sola columna en móviles */
+    gap: 30px;
+  }
+
+  .btn-comprar {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .product-card h2 {
+    font-size: 20px;
+  }
+
+  #carrito-icono {
+    font-size: 24px;
+    padding: 8px;
+    top: 10px;
+    right: 10px;
+  }
+
+  #carrito-panel {
+    width: 90%;
+    right: -100%;
+  }
+
+  #carrito-panel.abierto {
+    right: 0;
+  }
 }
 
 
