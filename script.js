@@ -21,6 +21,16 @@ function actualizarTotal() {
 }
 
 function crearItemCarrito(nombre, talle, precioTexto) {
+  // Microinteracción: mostrar mensaje flotante cuando se agrega un producto
+const noti = document.createElement("div");
+noti.className = "mensaje-flotante";
+noti.textContent = `${nombre} agregado al carrito ✅`;
+document.body.appendChild(noti);
+
+setTimeout(() => {
+  noti.remove();
+}, 2500);
+
   const precio = parseInt(precioTexto.replace(/\D/g, ''));
   total += precio;
 
@@ -70,3 +80,49 @@ carritoIcono.addEventListener("click", () => {
 cerrarCarrito.addEventListener("click", () => {
   carritoPanel.classList.remove("abierto");
 });
+
+document.getElementById("whatsapp-comprar").addEventListener("click", () => {
+  const nombreCliente = document.getElementById("cliente-nombre").value.trim();
+  const items = document.querySelectorAll("#carrito-lista li");
+
+  if (nombreCliente === "") {
+    alert("Por favor, ingresá tu nombre y apellido.");
+    return;
+  }
+
+  if (items.length === 0) {
+    alert("El carrito está vacío.");
+    return;
+  }
+
+  let mensaje = `Hola, soy ${nombreCliente} y quiero comprar:\n`;
+
+  items.forEach(item => {
+    mensaje += `• ${item.querySelector("span").textContent}\n`;
+  });
+
+  mensaje += `\nTotal: ${carritoTotal.textContent}`;
+
+  const numeroWhatsApp = "5493496446680"; // Cambiar si querés
+  const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+
+  // Abrir WhatsApp
+  window.open(url, "_blank");
+
+  // Limpiar carrito después del envío
+  document.getElementById("cliente-nombre").value = "";
+  document.getElementById("carrito-lista").innerHTML = "";
+  total = 0;
+  actualizarTotal();
+  carritoPanel.classList.remove("abierto");
+});
+
+// Carrusel automático de promos
+let indice = 0;
+const promos = document.querySelectorAll('.promo');
+
+setInterval(() => {
+  promos.forEach(p => p.classList.remove('activa'));
+  indice = (indice + 1) % promos.length;
+  promos[indice].classList.add('activa');
+}, 4000);
